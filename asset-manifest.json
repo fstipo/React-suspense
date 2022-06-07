@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/React-suspense/static/css/main.e7720ab7.css",
-    "main.js": "/React-suspense/static/js/main.b4873acf.js",
+    "main.js": "/React-suspense/static/js/main.22c3acd3.js",
     "static/js/787.432afab5.chunk.js": "/React-suspense/static/js/787.432afab5.chunk.js",
     "index.html": "/React-suspense/index.html",
     "main.e7720ab7.css.map": "/React-suspense/static/css/main.e7720ab7.css.map",
-    "main.b4873acf.js.map": "/React-suspense/static/js/main.b4873acf.js.map",
+    "main.22c3acd3.js.map": "/React-suspense/static/js/main.22c3acd3.js.map",
     "787.432afab5.chunk.js.map": "/React-suspense/static/js/787.432afab5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e7720ab7.css",
-    "static/js/main.b4873acf.js"
+    "static/js/main.22c3acd3.js"
   ]
 }
