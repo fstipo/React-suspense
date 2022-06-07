@@ -1,19 +1,23 @@
-// import React from 'react';
+import { fetchUser } from './Api';
 
-// const resource = fetchData();
+let user;
+user = fetchUser()
+  .then((user) => console.log(user))
+  .catch((err) => console.log(err));
 
-// const ProfileDetails = () => {
-//   const user = resource.user.read();
-//   return (
-//     <div className="card card-body my-3">
-//       <h1 className="large text-primary">{user.name}</h1>
-//       <ul>
-//         <li>Username:</li>
-//         <li>Email:</li>
-//         <li>City:</li>
-//       </ul>
-//     </div>
-//   );
-// };
+console.log(user.id);
 
-// export default ProfileDetails;
+const ProfileDetails = () => {
+  return (
+    <div className="card card-body my-3">
+      <h1 className="large text-primary">{user.id}</h1>
+      <ul>
+        <li>Username:</li>
+        <li>Email:</li>
+        <li>City:</li>
+      </ul>
+    </div>
+  );
+};
+
+export default ProfileDetails;

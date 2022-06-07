@@ -1,27 +1,14 @@
-const fetchUser = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/ussers/1');
-
-  if (response.status !== 200) {
-    throw new Error("⛔ Can't fetch the data");
-  }
-
-  const data = await response.json();
-  return data;
-};
-
-fetchUser()
-  .then((data) => {
-    console.log('Resolved:', data);
-  })
-  .catch((err) => console.log('Rejected:', err.message));
+import React, { Suspense } from 'react';
+import { fetchUser } from './components/Api';
+import ProfileDetails from './components/ProfileDetails';
 
 function App() {
   return (
-    <div className="container my-5 text-danger">
-      {/* <Suspense fallback={<h1>Loading user...</h1>}>
-        <ProfileDetails />
-      </Suspense> */}
+    <div className="container my-5 text-dark">
       <h1>Hello 🐶</h1>
+      <Suspense fallback={<h1>Loading user...</h1>}>
+        <ProfileDetails />
+      </Suspense>
     </div>
   );
 }
