@@ -1,14 +1,19 @@
 export const fetchUser = async () => {
   console.log('Fetching user...');
-  const response = await fetch('https://jsonplaceholder.typicode.com/users/10');
+  const response = await fetch('https://jsonplaceholder.typicode.com/users/5');
+  if (response.status !== 200) {
+    throw new Error("⛔ Can't fetch data");
+  }
   const data = await response.json();
   return data;
 };
 
-// const fetchPosts = async () => {
-//   console.log('Fetching posts...');
-//   await axios
-//     .get('https://jsonplaceholder.typicode.com/posts')
-//     .then((res) => res.data)
-//     .catch((err) => console.log(err));
-// };
+export const fetchPosts = async () => {
+  console.log('Fetching posts...');
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  if (response.status !== 200) {
+    throw new Error("⛔ Can't fetch data");
+  }
+  const data = await response.json();
+  return data;
+};

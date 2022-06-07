@@ -1,20 +1,24 @@
+import React, { useState, useEffect } from 'react';
 import { fetchUser } from './Api';
 
-let user;
-user = fetchUser()
-  .then((user) => console.log(user))
-  .catch((err) => console.log(err));
-
-console.log(user.id);
+// console.log(user.id);
 
 const ProfileDetails = () => {
+  const [user, setUser] = useState('');
+
+  useEffect(() => {
+    fetchUser()
+      .then((user) => setUser(user))
+      .catch((err) => console.log(err.message));
+  }, []);
+
   return (
     <div className="card card-body my-3">
-      <h1 className="large text-primary">{user.id}</h1>
+      <h1 className="large text-primary">{user.name}</h1>
       <ul>
-        <li>Username:</li>
-        <li>Email:</li>
-        <li>City:</li>
+        <li>Username: {user.name}</li>
+        <li>Email: {user.email}</li>
+        <li>Website: {user.website}</li>
       </ul>
     </div>
   );

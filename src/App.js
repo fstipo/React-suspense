@@ -1,13 +1,15 @@
 import React, { Suspense } from 'react';
-import { fetchUser } from './components/Api';
 import ProfileDetails from './components/ProfileDetails';
+import ProfilePosts from './components/ProfilePosts';
 
 function App() {
   return (
     <div className="container my-5 text-dark">
-      <h1>Hello 🐶</h1>
       <Suspense fallback={<h1>Loading user...</h1>}>
         <ProfileDetails />
+      </Suspense>
+      <Suspense fallback={<h1>Loading posts...</h1>}>
+        <ProfilePosts />
       </Suspense>
     </div>
   );
